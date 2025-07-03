@@ -874,8 +874,6 @@ print(numpy.mean(data, axis = 1))
 
 
 
-```python
 
-```
 
 
