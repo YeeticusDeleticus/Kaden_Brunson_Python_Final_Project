@@ -1221,3 +1221,209 @@ print(len(name))
 
     3
 
+
+
+## Using Multiple Files
+
+In this section, we learned how to use multiple file while in python.
+
+```python
+import glob
+```
+
+
+```python
+print(glob.glob('inflammation*.csv'))
+```
+
+    ['inflammation-10.csv', 'inflammation-09.csv', 'inflammation-11.csv', 'inflammation-06.csv', 'inflammation-05.csv', 'inflammation-08.csv', 'inflammation-01.csv', 'inflammation-07.csv', 'inflammation-04.csv', 'inflammation-03.csv', 'inflammation-02.csv', 'inflammation-12.csv']
+
+
+
+```python
+import glob
+import numpy
+import matplotlib.pyplot
+
+filenames = sorted(glob.glob('inflammation*.csv'))
+filenames = filenames[0:3]
+
+for filename in filenames:
+    print(filename)
+    
+    data = numpy.loadtxt(fname=filename, delimiter = ',')
+    
+    fig = matplotlib.pyplot.figure(figsize = (10.0, 3.0))
+    
+    axes1 = fig.add_subplot(1,3,1)
+    axes2 = fig.add_subplot(1,3,2)
+    axes3 = fig.add_subplot(1,3,3)
+    
+    axes1.set_ylabel('average')
+    axes1.plot(numpy.mean(data, axis = 0))
+    
+    axes2.set_ylabel('min')
+    axes2.plot(numpy.amax(data, axis = 0))
+    
+    axes3.set_ylabel('min')
+    axes3.plot(numpy.amin(data, axis = 0))
+    
+    fig.tight_layout()
+    matplotlib.pyplot.show()
+```
+
+    inflammation-01.csv
+
+
+
+![png](output_2_1.png)
+
+
+    inflammation-02.csv
+
+
+
+![png](output_2_3.png)
+
+
+    inflammation-03.csv
+
+
+
+![png](output_2_5.png)
+
+
+
+
+## Making Choices
+
+In this exercise, we learned how to get python to make choices for us. After learning this, we were able to incorporate this method into our patient data analysis, which can also be seen below.
+
+```python
+num = 37
+if num > 100:
+    print('greater')
+else:
+    print('not greater')
+print('done')
+```
+
+    not greater
+    done
+
+
+
+```python
+num = 53
+print('before conditional...')
+if num > 100:
+    print(num, 'is greater than 100')
+print('...after conditional')
+```
+
+    before conditional...
+
+
+
+```python
+num = 14
+
+if num > 0:
+    print(num, 'is positive')
+elif num == 0:
+    print(num, 'is zero')
+else:
+    print(num, 'is negative')
+```
+
+    14 is positive
+
+
+
+```python
+if (1 > 0) and (-1 >= 0):
+    print('both parts are true')
+else:
+    print('at least one part if false')
+```
+
+    at least one part if false
+
+
+
+```python
+if (1 > 0) or (-1 >= 0):
+    print('at least one part is true')
+```
+
+    at least one part is true
+
+
+
+```python
+if (1 > 0) or (-1 >= 0):
+    print('at least one part is true')
+else:
+    print('both of these are false')
+```
+
+    at least one part is true
+
+
+
+```python
+import numpy
+```
+
+
+```python
+import numpy
+```
+
+
+```python
+data = numpy.loadtxt(fname = 'inflammation-01.csv', delimiter = ',')
+```
+
+
+```python
+max_inflammation_0 = numpy.amax(data, axis = 0)[0]
+```
+
+
+```python
+max_inflammation_20 = numpy.amax(data, axis = 0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
+    print('Saspictious looking maxima!')
+
+elif numpy.sum(numpy.amin(data, axis = 0)) == 0:
+    print('Minima add up to zero!')
+    
+else:
+    print('Seems OK!')
+```
+
+    Saspictious looking maxima!
+
+
+
+```python
+data = numpy.loadtxt(fname = 'inflammation-03.csv', delimiter =',')
+
+max_inflammation_0 = numpy.amax(data, axis = 0)[0]
+
+max_inflammation_20 = numpy.amax(data, axis = 0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
+    print('Suspicious looking maxima!')
+elif numpy.sum(numpy.amin(data, axis = 0)) == 0:
+    print('Minima add up to zero! -> HEALTHY PARTICIPANT ALERT!')
+else:
+    print('Seems ok!')
+```
+
+    Minima add up to zero! -> HEALTHY PARTICIPANT ALERT!
+
+
+
