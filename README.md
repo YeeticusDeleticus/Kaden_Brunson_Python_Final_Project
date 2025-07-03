@@ -496,9 +496,6 @@ fig.tight_layout()
 
 
 
-```python
-
-```
 
 
 ## Python Fundamentals
@@ -640,6 +637,5 @@ print('weight in kilograms is now:', weight_kg)
 
 
 
-```python
 
 
