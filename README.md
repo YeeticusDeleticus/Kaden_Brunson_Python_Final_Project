@@ -1429,7 +1429,7 @@ else:
 
 ## Functions
 
-In this section, we learned how to use functions in python.
+In this section, we learned how to use the different functions python has to offer.
 
 ```python
 fahrenheit_val = 99
