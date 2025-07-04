@@ -952,7 +952,7 @@ matplotlib.pyplot.show()
 
 
 
-## Storing Values in List
+## Storing Values in Lists
 
 In this exercise, we learned how to store certain values in list using the python coding environment.
 
