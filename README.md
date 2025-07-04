@@ -1427,7 +1427,7 @@ else:
 
 
 
-## Functions
+## Using Functions
 
 In this section, we learned how to use the different functions python has to offer.
 
