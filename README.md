@@ -1,4 +1,4 @@
-# Ethan_Stewart_Python_Portfolio
+# Kaden_Brunson_Python_Final_Project
 This is the portfolio of python code that I learned during BISC 450C.
 
 
